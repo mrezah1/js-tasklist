@@ -1,0 +1,225 @@
+@import '../assets/fonts/Roboto/font.css';
+/* html,body{
+    height: 100%;
+} */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto !important;
+    font-weight:400;
+    box-sizing: border-box;
+    outline: none;
+    transition: .3s all;
+}
+svg{
+    cursor: pointer;
+}
+.o0{
+    opacity: 0;
+}
+.o1{    
+    opacity: 1;
+}
+.tr-0{
+    transform: scale(0);
+}
+.tr-1{
+    transform: scale(1);
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.tr{
+    text-align: right;
+}
+.tl{
+    text-align:left;
+}
+.tc{
+    text-align:center;
+}
+.wrapper{
+    padding:0 1rem;
+    /* height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.box{
+    width: 100%;    
+    height: 32rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+    border: 1px solid #e5e5e5;
+    padding:1rem 1.5rem;
+    border-radius: 6px;
+    /* background-color:#f9f9f9; */
+    position: relative;
+}
+@media only screen and (min-width:576px){
+    .box{
+        width: 90%;
+    }
+}
+@media only screen and (min-width:768px){
+    .box{
+        width: 60%;
+    }
+}
+@media only screen and (min-width:992px){
+    .box{
+        width: 36%;
+    }
+}
+.box::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-color: #43d8c9;
+    border-radius: 6px 6px 0 0;
+}
+.box h1{
+    font-size: 50px;
+    font-weight: 300;
+    margin: .5rem 0 2rem 0;
+    color: #862a5c;
+}
+#task_input{
+    border: none;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    width: 100%;
+    padding: .7rem 1.2rem;
+    font-size: 16px;
+    transition: .25s all;
+}
+#task_input:hover,#search_box input:hover{
+    border-color: #00a8ff;
+}
+#task_input:focus,#search_box input:focus{
+    border-color:#74cbf7;
+}
+#task_parent{
+    position: relative;
+}
+.search-icon{
+    text-align: right;
+    position: absolute;
+    right: 25px;
+    top: 166px;
+    z-index: 99;
+}
+.search-icon svg{
+    width: 20px;
+    height: 20px;
+    fill: #5c3f6d;
+}
+#search_box{
+    position: absolute;
+    width: 89%;
+    left: 26px;
+    top: 170px;
+}
+#search_box input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    padding:.25rem .5rem;    
+}
+#search_box svg{
+    width: 15px;
+    height: 15px;
+    fill: red;
+    position: absolute;
+    top: -4px;
+    right: 7px;    
+}
+#task_parent{
+    margin-top: 3rem;
+    position: relative;
+}
+.task-empty{
+    margin-top: 5rem;
+    color: #787878;
+    font-size: 14px;
+}
+.removeAllTask{
+    padding-right: .7rem;
+    position: absolute;
+    top: -3px;
+    right: 3px;
+}
+.removeAllTask svg{
+    width: 19px;
+    height: 18px;
+    fill: rgb(255, 3, 66);
+}
+#task_parent ul{
+    list-style: none;
+    text-align: left;
+    height: 19rem;
+    padding:.75rem 0;  
+    overflow-y: auto; 
+    /* border: 1px solid #20bf6b; */
+}
+#task_parent ul li{
+padding:.8rem 1rem;
+width: 100%;
+background-color: rgba(225,225,225,.3);
+border-radius: 4px;
+margin: .4rem 0;
+transition: .3s all;
+border: 1px solid #dedede;
+line-break: anywhere;
+position: relative;
+transform: scaleX(.95);
+}
+#task_parent ul li:hover{
+    transform: scaleX(1);
+    filter: blur(.5px);
+}
+#task_parent .scroll {
+    width: 5px;
+    height: 50px;
+    border-radius: 50rem;
+    background-color:skyblue;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#task_parent ul li button{
+    float: right;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: red;
+    font-weight: 700;
+    transition: .3s all ease;
+    transform: scale(0);
+    cursor: pointer;
+    padding: 0 .3rem;
+}
+#task_parent ul li:hover button{
+    transform: scale(1);
+}
+#task_parent ul{
+    scrollbar-width: thin;
+    scrollbar-color:#03A9F4 transparent;
+  }
+#task_parent ul::-webkit-scrollbar{
+    background: transparent;
+    width: 4px;
+}
+#task_parent ul::-webkit-scrollbar-thumb{
+    border-radius: 50rem;
+    background: #03A9F4;   
+}
